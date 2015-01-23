@@ -46,15 +46,16 @@ Here's a condensed version of what to do once you have Node and NPM setup as per
 9. Verify that Grunt put the newly created files in the expected locations. 
 
 Example: Verify that the js has been compiled, concated outputted to the /build/ folder.
-	concat: {   
-        dist: {
-            src: [
-                '<%= dirs.js_folder %>/vendor/*.js', // All JS in the libs folder
-                '<%= dirs.js_folder %>/main.js'  // This specific file
-            ],
-            dest: '<%= dirs.js_folder %>/build/production.js',
-        }
-    },
+	
+        concat: {   
+            dist: {
+                src: [
+                    '<%= dirs.js_folder %>/vendor/*.js', // All JS in the libs folder
+                    '<%= dirs.js_folder %>/main.js'  // This specific file
+                ],
+                dest: '<%= dirs.js_folder %>/build/production.js',
+            }
+        },
 
 Watch Files for Changes Using Grunt
 -------------
