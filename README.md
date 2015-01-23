@@ -161,21 +161,23 @@ This was resolved by completely uninstalling Node + NPM, then fixing the folder 
 The solution was found here: http://stackoverflow.com/questions/11177954/how-do-i-completely-uninstall-node-js-and-reinstall-from-beginning-mac-os-x
 
 To completely uninstall node + npm is to do the following:
-    1.  go to /usr/local/lib and delete any node and node_modules
-    2.  go to /usr/local/include and delete any node and node_modules directory
-    3.  if you installed with brew install node, then run brew uninstall node in your terminal
-    4.  check your Home directory for any local or lib or include folders, and delete any node ornode_modules from there
-    5.  go to /usr/local/bin and delete any node executable
+
+        1.  go to /usr/local/lib and delete any node and node_modules
+        2.  go to /usr/local/include and delete any node and node_modules directory
+        3.  if you installed with brew install node, then run brew uninstall node in your terminal
+        4.  check your Home directory for any local or lib or include folders, and delete any node ornode_modules from there
+        5.  go to /usr/local/bin and delete any node executable
 
 You may need to do the additional instructions as well:
-    1.  sudo rm /usr/local/bin/npm
-    2.  sudo rm /usr/local/share/man/man1/node.1
-    3.  sudo rm /usr/local/lib/dtrace/node.d
-    4.  sudo rm -rf ~/.npm
-    5.  sudo rm -rf ~/.node-gyp
-    6.  sudo rm /opt/local/bin/node
-    7.  sudo rm /opt/local/include/node
-    8.  sudo rm -rf /opt/local/lib/node_modules
+
+        1.  sudo rm /usr/local/bin/npm
+        2.  sudo rm /usr/local/share/man/man1/node.1
+        3.  sudo rm /usr/local/lib/dtrace/node.d
+        4.  sudo rm -rf ~/.npm
+        5.  sudo rm -rf ~/.node-gyp
+        6.  sudo rm /opt/local/bin/node
+        7.  sudo rm /opt/local/include/node
+        8.  sudo rm -rf /opt/local/lib/node_modules
 
 To fix the folder permissions needed for Node + NPM to work properly follow this tutorial: https://docs.npmjs.com/getting-started/fixing-npm-permissions
 
