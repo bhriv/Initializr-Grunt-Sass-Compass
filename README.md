@@ -39,6 +39,26 @@ Here's a condensed version of what to do once you have Node and NPM setup as per
 2. In terminal type: npm install
 3. You should now see a /node_modules/ directory with a bunch of subdirectories (the dependency packages)
 4. In terminal type: npm install -g grunt-cli
-5. Copy the Gruntfile.js with the Grunt tasks we are specifying
+5. Copy the Gruntfile.js with the Grunt tasks we are asking Grunt to automate.
+6. In terminal type: grunt
+7. Watch Grunt messages and verify each Grunt task completes successfully.
+8. View the Gruntfile.js and check the destination path of the css and js files.
+9. Verify that Grunt put the newly created files in the expected locations. 
 
+Example: Verify that the js has been compiled, concated outputted to the /build/ folder.
+	concat: {   
+        dist: {
+            src: [
+                '<%= dirs.js_folder %>/vendor/*.js', // All JS in the libs folder
+                '<%= dirs.js_folder %>/main.js'  // This specific file
+            ],
+            dest: '<%= dirs.js_folder %>/build/production.js',
+        }
+    },
+
+Watch Files for Changes Using Grunt
+-------------
+
+In terminal type: grunt watch
+Make a change to a sass file and keep your eye on terminal. You should see the sass recompile and spit out a success message with the timestamp of the task. 
 
