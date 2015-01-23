@@ -4,12 +4,12 @@ module.exports = function(grunt) {
     grunt.initConfig({
         // Add global variables for asset locations
         dirs: {            
-            sass_folder: 'assets/sass',
-            css_folder: 'assets/css',
-            js_folder: 'assets/js',
-            images_folder: 'assets/images',
+            sass_folder: 'public/assets/sass',
+            css_folder: 'public/assets/css',
+            js_folder: 'public/assets/js',
+            images_folder: 'public/assets/images',
             // files for deploying
-            build_folder: 'build'
+            build_folder: 'public/build'
             // Usage Example: 
                 // dest: '<%= dirs.sass_folder %>/assets/sass' 
         },
@@ -20,7 +20,7 @@ module.exports = function(grunt) {
             dist: {
                 src: [
                     '<%= dirs.js_folder %>/vendor/*.js', // All JS in the libs folder
-                    '<%= dirs.js_folder %>/global.js'  // This specific file
+                    '<%= dirs.js_folder %>/main.js'  // This specific file
                 ],
                 dest: '<%= dirs.js_folder %>/build/production.js',
             }
@@ -29,7 +29,7 @@ module.exports = function(grunt) {
         uglify: {
             build: {
                 src: '<%= dirs.js_folder %>/build/production.js',
-                dest: '<%= dirs.js_folder %>/build/production.min.js'
+                dest: '<%= dirs.js_folder %>/build/production-uglified.js'
             }
         },
         // Image Optimization
@@ -37,9 +37,9 @@ module.exports = function(grunt) {
             dynamic: {
                 files: [{
                     expand: true,
-                    cwd: 'assets/images',
+                    cwd: 'public/assets/images',
                     src: ['**/*.{png,jpg,gif}'],
-                    dest: 'assets/images/optimized/'
+                    dest: 'public/assets/images/optimized/'
                 }]
             }
         },
@@ -109,8 +109,8 @@ module.exports = function(grunt) {
               options: {
                 // Target-specific options go here.
               },
-              src: 'assets/css/screen.css',
-              dest: 'assets/css/autoprefixer/custom.css'
+              src: 'public/assets/css/screen.css',
+              dest: 'public/assets/css/autoprefixer/screen-autoprefixer.css'
             },
         },
 
@@ -154,7 +154,7 @@ module.exports = function(grunt) {
             //     tasks: ['autoprefixer']
             // },
             compass: {
-                files: ['assets/**/*.{scss,sass}'],
+                files: ['public/assets/**/*.{scss,sass}'],
                 tasks: ['compass:dev']
             }
         }   

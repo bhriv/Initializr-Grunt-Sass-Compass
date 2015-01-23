@@ -1,0 +1,27 @@
+
+/* Test For autoprefixer browser support */
+
+::placeholder {
+  color: #ccc
+}
+
+div.small{
+  width: 50px;
+}
+div.small:hover{
+  width: 200px;
+  // autoprefixer will add or remove CSS3 prefixes depending on what browsers are supported
+  -webkit-transition: width 1s ease-in-out;
+  transition: width 1s ease-in-out;
+}
+footer {
+  // autoprefixer will add or remove CSS3 prefixes depending on what browsers are supported
+  background: linear-gradient(to top, black, white);
+  display: flex;
+  width: calc(50% - 2em);
+}
+
+h1{
+  // test that Compass extensions are working
+  @include text-shadow(1px 1px 1px #fff);
+}
