@@ -29,7 +29,8 @@ module.exports = function(grunt) {
         uglify: {
             build: {
                 src: '<%= dirs.js_folder %>/build/production.js',
-                dest: '<%= dirs.js_folder %>/build/production-uglified.js'
+                // dest: '<%= dirs.js_folder %>/build/production-uglified.js'
+                dest: '<%= dirs.build_folder %>/production-uglified.js'
             }
         },
         // Image Optimization

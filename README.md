@@ -62,3 +62,30 @@ Watch Files for Changes Using Grunt
 In terminal type: grunt watch
 Make a change to a sass file and keep your eye on terminal. You should see the sass recompile and spit out a success message with the timestamp of the task. 
 
+Verify JS and Sass are Working
+-------------
+
+Load the index.html file in a browser (Safari).
+You should see a text shadow on the Top h1 element, and an ugly black gradient in the footer. 
+The aside should have a div that reacts when hovered over.
+
+Confirm Grunt Variables for File Locations are working
+-------------
+
+To verify we are setup correctly with full flexibility let's move the production js file to a new directory and relink. 
+
+Since we are using the 'production-uglified.js' file in our index.html file, all we have to do is change the Uglify desination setting. We have already setup a 'dirs.build_folder' location so let's use that setting. 
+
+1. Locate the uglify section in Gruntfile.js
+2. Change the dirs.js_folder to dirs.build_folder and save the changes.
+
+		uglify: {
+            build: {
+                src: '<%= dirs.js_folder %>/build/production.js',
+                dest: '<%= dirs.js_folder %>/build/production-uglified.js'
+            }
+        },
+3. In terminal type: grunt
+4. Verify that you now have a '/build/' directory in your '/public/' folder containing the production-uglified.js file
+5. Update the index.html file to fix the script source: <script src="build/production-uglified.js"></script>
+6. BAM! You have just moved the location of your production files with a single line of code!
