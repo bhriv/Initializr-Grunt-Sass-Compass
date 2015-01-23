@@ -21,7 +21,7 @@ Build and Download HTML5 Initialzr Files:
 Install Compass in Directory
 -------------
 
-1. In terminal type: compass install
+1. In terminal type: compass init
 2. Verify you see a config.rb file in the root directory
 3. In config.rb rename the directory paths to:
 	css_dir = "public/assets/css"
@@ -35,11 +35,11 @@ Install Grunt
 
 Here's a condensed version of what to do once you have Node and NPM setup as per the tutorial by the master (Chris Coiyer): http://24ways.org/2013/grunt-is-not-weird-and-hard/
 
-1. Include the Grunt package.json file (with the common dependencies).
+1. Include the Grunt package.json file (with the common dependencies) in the folder with the Compass config.rb file.
 2. In terminal type: npm install
 3. You should now see a /node_modules/ directory with a bunch of subdirectories (the dependency packages)
 4. In terminal type: npm install -g grunt-cli
-5. Copy the Gruntfile.js with the Grunt tasks we are asking Grunt to automate.
+5. Copy the Gruntfile.js with the Grunt tasks we are asking Grunt to automate into the directory that contains the Compass config.rb file, and copy the test files from the /assets/ folder into your project so Grunt has some files to work on.
 6. In terminal type: grunt
 7. Watch Grunt messages and verify each Grunt task completes successfully.
 8. View the Gruntfile.js and check the destination path of the css and js files.

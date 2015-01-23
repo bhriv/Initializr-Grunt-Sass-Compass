@@ -1,5 +1,5 @@
 {
-  "name": "Initializr-Grunt-Sass-Compass",
+  "name": "Luminous",
   "version": "0.1.0",
   "devDependencies": {
     "grunt": "~0.4.1",
